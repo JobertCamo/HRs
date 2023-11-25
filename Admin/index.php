@@ -1,8 +1,7 @@
 <?php 
 include "class/addEmployee.php";
-include "class/addUser.php";
+
 include "inc/addEmployee.php";
-include "inc/addUser.php";
 
     
     if(isset($_POST["sub"])){
@@ -77,20 +76,8 @@ include "inc/addUser.php";
         $ae->delData($id);
     }
     //UPDATE DATA
-    if(isset($_POST["upd"])){
-
-    }
+    if(isset($_POST["upd"]))
     
-    //ADD USER
-
-    if(isset($_POST["adduser"])){
-        $user = filter_input(INPUT_POST,"username",FILTER_SANITIZE_SPECIAL_CHARS);
-        $userType = filter_input(INPUT_POST,"userType",FILTER_SANITIZE_SPECIAL_CHARS);
-        $pass = password_hash($_POST["password"],PASSWORD_DEFAULT);
-
-        $add = new userControll();
-        $add->addUser($user, $pass, $userType);
-    }
     
       
 ?>
